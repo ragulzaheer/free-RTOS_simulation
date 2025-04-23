@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "author": "Ragul Raj",
+    "editor": "wokwi",
+    "parts": [
+      
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+      { "type": "wokwi-dht22", "id": "dht1", "top": 9.9, "left": -130.2, "attrs": {} }
+     
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "esp:GND.1", "dht1:GND", "black", [ "h0" ] ],
+      [ "esp:5V", "dht1:VCC", "red", [ "h0" ] ],
+      [ "esp:15", "dht1:SDA", "green", [ "v19.2", "h-206.36" ] ]
+      
+    ],
+    "dependencies": {}
+  }

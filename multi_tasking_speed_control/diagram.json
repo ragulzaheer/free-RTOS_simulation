@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "author": "Ragul Raj",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+      { "type": "wokwi-potentiometer", "id": "pot1", "top": 8.3, "left": -115.4, "attrs": {} },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 66,
+        "left": 121.8,
+        "rotate": 90,
+        "attrs": { "color": "red" }
+      },
+      { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -65.7, "left": 111.1, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "esp:34", "pot1:SIG", "cyan", [ "h-28.65", "v48", "h-48" ] ],
+      [ "pot1:VCC", "esp:3V3", "red", [ "v9.6", "h28", "v-57.6" ] ],
+      [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+      [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v0", "h-76.8", "v-38.4", "h-96" ] ],
+      [ "esp:5", "ultrasonic1:TRIG", "yellow", [ "h9.6", "v-76.8", "h86.4", "v-9.6" ] ],
+      [ "esp:18", "ultrasonic1:ECHO", "magenta", [ "h19.2", "v-57.6", "h86.4" ] ],
+      [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v-9.6", "h-116.4" ] ],
+      [ "esp:19", "led1:A", "purple", [ "h0" ] ],
+      [ "esp:GND.3", "led1:C", "black", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }

@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "freeRTOS DHT",
+			"path": "../../../freeRTOS DHT"
+		}
+	],
+	"settings": {}
+}
